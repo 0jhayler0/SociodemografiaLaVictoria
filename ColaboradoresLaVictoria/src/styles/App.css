@@ -1,0 +1,68 @@
+:root{
+    --textColor: black;
+    --secondTextColor: white;
+    --thirdColor: #51aa49;
+    --textFont: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.principalContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.greeting{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: var(--textFont);
+    color: var(--thirdColor);
+}
+
+.menuContainer{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 2rem;
+    background-color: var(--thirdColor);
+    box-shadow: 0 2px 30px 5px #7a7a7a;
+}
+
+.menuContainer ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 2rem;
+    background-color: var(--thirdColor);
+}
+
+.menuContainer li{
+    list-style: none;
+    color: var(--secondTextColor);
+}
+
+.menuButtons{
+    border: none;
+    cursor: pointer;
+    color: var(--secondTextColor);
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.content{
+    width: 100%;
+    height: calc(100%-20px);
+
+}
