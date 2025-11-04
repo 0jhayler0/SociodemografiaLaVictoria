@@ -1,68 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root{
     --textColor: black;
     --secondTextColor: white;
     --thirdColor: #51aa49;
+    --backgroundColor: #fcfcfc;
     --textFont: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .principalContainer{
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.greeting{
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 800;
-    font-family: var(--textFont);
-    color: var(--thirdColor);
+    background-color: var(--backgroundColor);
 }
 
 .menuContainer{
-    position: fixed;
-    top: 0;
     width: 100%;
-    height: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 2rem;
-    background-color: var(--thirdColor);
-    box-shadow: 0 2px 30px 5px #7a7a7a;
-}
+    height: 8%;
+    background-color: #51aa49;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
 
+}
 .menuContainer ul{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 2rem;
-    background-color: var(--thirdColor);
-}
-
-.menuContainer li{
     list-style: none;
-    color: var(--secondTextColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
 }
-
+.menuContainer ul li{
+    color: var(--secondTextColor);
+    font-family: var(--textFont);
+    font-size: 20px;
+    cursor: pointer;
+}
 .menuButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
     border: none;
+    background-color: transparent;
     cursor: pointer;
     color: var(--secondTextColor);
-    background-color: transparent;
-    font-size: 1rem;
-    font-weight: bolder;
+    
+}
+.content{
+    height: 92%;
+    z-index: 1;
 }
 
-.content{
-    width: 100%;
-    height: calc(100%-20px);
-
+.greeting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: var(--textFont);
+    font-size: 30px;
+    color: var(--thirdColor);
+    font-weight: 500;
 }
