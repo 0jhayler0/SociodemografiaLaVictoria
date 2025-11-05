@@ -9,6 +9,7 @@ import './styles/App.css'
 function App() {
 
   const [option, setOption] = useState("");
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   const greeting = () => {
     const T = new Date().getHours();
@@ -31,12 +32,12 @@ function App() {
         return <Incapacidades/>;
       case "Retirados":
         return <Retirados/>;
-        case "AñadirColaboradores":
-        return <AñadirColaboradores/>;
       default:
         return <div className="greeting">{greeting()}</div>
     }
   }
+  
+ 
 
   return (
     <div className='principalContainer'>
@@ -50,9 +51,10 @@ function App() {
           <li>|</li>
           <li><button className='menuButtons' onClick={() => setOption("Retirados")}>Retirados</button></li>
           <li>|</li>
-          <li><button className='menuButtons' onClick={() => setOption("AñadirColaboradores")}>Añadir Colaboradores</button></li>
+          <li><button className='menuButtons' id="mostrarFormularioBtn" onClick={() => setMostrarFormulario(true)}>Añadir Colaboradores</button></li>
         </ul>
       </header>
+      <AñadirColaboradores isOpen={mostrarFormulario} onClose={() =>setMostrarFormulario(false) }/>
       <main className='content'>{renderContent()}</main>
     </div>
   )
