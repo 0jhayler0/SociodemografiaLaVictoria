@@ -25,6 +25,7 @@ const AñadirColaboradores = ({ isOpen, onClose }) => {
   return (
       <div className={`colaboradoresContainer ${isOpen ? "visible" : ""}` }>
         <div ref={modalRef} className={`modal ${isOpen ? "active" :""}`}>
+          
         <form method="POST" action="#">
 
           <h2>Registro de Empleado</h2>
