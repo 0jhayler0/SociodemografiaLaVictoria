@@ -6,7 +6,6 @@ const AñadirColaboradores = () => {
     <div>
       <div className='colaboradoresContainer'>
         <form action="POST">
-          <div className='formIzq'>
             <input type="text"  placeholder='Cedula'/>
             <input type="text"  placeholder='Nombres y Apellidos'/>
             <input type="text"  placeholder='Area'/>
@@ -33,8 +32,6 @@ const AñadirColaboradores = () => {
             <input type="text" value='nacionalidad' placeholder='Nacionalidad'/>
             <input type="text" value='cargo' placeholder='Cargo'/>
             <input type="text" value='eps' placeholder='Eps'/>
-            </div>
-            <div className='formDer'>
             <input type="text" value='cajaCompensacion' placeholder='Caja de Compensacion'/>
             <input type="text" value='direccion' placeholder='Direccion'/>
             <input type="text" value='municipio' placeholder='Municipio'/>
@@ -77,7 +74,6 @@ const AñadirColaboradores = () => {
             <input type="text" value='contactoEmergencia' placeholder='Contacto de Emergencia (Nombres y Apellidos)'/>
             <input type="text" value='telEmergencia' placeholder='Contacto de emergencia (N° de telefono)'/>
             <input className='submit' type="submit" />
-            </div>
         </form>
       </div>
     </div>

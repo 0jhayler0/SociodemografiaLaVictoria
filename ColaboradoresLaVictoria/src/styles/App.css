@@ -50,6 +50,11 @@
     background-color: transparent;
     cursor: pointer;
     color: var(--secondTextColor);
+    transition: all ease-in-out 0.4s;
+    font-size: 15px;
+}
+.menuButtons:hover{
+    font-size: 18px;
     
 }
 .content{
