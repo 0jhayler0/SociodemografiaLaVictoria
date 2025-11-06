@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Activos from './components/Activos'
 import Aprendices from './components/Aprendices'
 import Incapacidades from './components/Incapacidades'
@@ -37,21 +37,20 @@ function App() {
     }
   }
   
- 
 
   return (
     <div className='principalContainer'>
       <header className='menuContainer'>
         <ul>
-          <li><button className='menuButtons' onClick={() => setOption("Activos")}>Colaboradores</button></li>
+          <li><button className={`menuButtons ${option === "Activos" ? "active" : ""}`} onClick={() => setOption("Activos")}>Colaboradores</button></li>
           <li>|</li>
-          <li><button className='menuButtons' onClick={() => setOption("Aprendices")}>Aprendices</button></li>
+          <li><button className={`menuButtons ${option === "Aprendices" ? "active" : ""}`} onClick={() => setOption("Aprendices")}>Aprendices</button></li>
           <li>|</li>
-          <li><button className='menuButtons' onClick={() => setOption("Incapacidades")}>Incapacidades</button></li>
+          <li><button className={`menuButtons ${option === "Incapacidades" ? "active" : ""}`} onClick={() => setOption("Incapacidades")}>Incapacidades</button></li>
           <li>|</li>
-          <li><button className='menuButtons' onClick={() => setOption("Retirados")}>Retirados</button></li>
+          <li><button className={`menuButtons ${option === "Retirados" ? "active" : ""}`} onClick={() => setOption("Retirados")}>Retirados</button></li>
           <li>|</li>
-          <li><button className='menuButtons' id="mostrarFormularioBtn" onClick={() => setMostrarFormulario(true)}>Añadir Colaboradores</button></li>
+          <li><button className={`menuButtons ${mostrarFormulario ? "active" : ""}`} id="mostrarFormularioBtn" onClick={() => setMostrarFormulario(true)}>Añadir Colaboradores</button></li>
         </ul>
       </header>
       <AñadirColaboradores isOpen={mostrarFormulario} onClose={() =>setMostrarFormulario(false) }/>

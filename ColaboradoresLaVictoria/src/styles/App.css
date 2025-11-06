@@ -45,18 +45,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;
     height: 100%;
     gap: 40px;
     border: none;
     background-color: transparent;
     cursor: pointer;
     color: var(--secondTextColor);
-    transition: all ease-in-out 0.4s;
+    border-radius: 20px;
     font-size: 15px;
+    transition: all 0.5s;
 }
-.menuButtons:hover{
-    font-size: 16px;
+.menuButtons:hover {
+    background-color: rgba(171, 223, 178, 0.555);
 }
+.menuButtons.active {
+    border-bottom: 1px solid var(--secondTextColor);
+    border-radius: 0px;
+    padding: 13px;
+}
+
 .content{
     height: 92%;
     z-index: 1;

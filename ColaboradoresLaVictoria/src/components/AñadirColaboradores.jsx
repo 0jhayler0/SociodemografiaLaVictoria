@@ -25,12 +25,12 @@ const AñadirColaboradores = ({ isOpen, onClose }) => {
   return (
       <div>
         <div className={`colaboradoresContainer ${isOpen ? "visible" : ""}` }>
+
+        <button className="closeButton" onClick={() =>setMostrarFormulario(true)}>X</button>
           
         <form method="POST" action="#" ref={modalRef} className={`modal ${isOpen ? "active" :""}`}>
 
           <h2>Registro de Empleado</h2>
-
-      <button className="closeButton">X</button>
 
           <select name="tipoDeDocumento" required>
             <option value="">Tipo de Documento</option>
