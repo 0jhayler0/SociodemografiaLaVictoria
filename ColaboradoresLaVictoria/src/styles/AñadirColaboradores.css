@@ -1,37 +1,43 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+:root {
+    --grayColor: #cccccc;
+}
+
+body {
     overflow-x: hidden;
 }
 
-.colaboradoresContainer{
-    display: none;
+.colaboradoresContainer {
     position: fixed;
-
-    width: 700px;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%) translateX(0);
+    width: 600px;
     height: max-content;
     border-radius: 25px;
     border: 3px solid var(--thirdColor);
     background-color: var(--secondTextColor);
-    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.3s ease;
     z-index: 1000;
-}
-.colaboradoresContainer.visible{
-    display: flex;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+
 }
 
-.modal{
-    transform: translateY(-150vh);
-    transition: transform 0.5s ease;
-}
-.modal.active{
-    transform: translateY(0);
+.colaboradoresContainer.visible {
+    left: calc(100% - 620px);
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(-50%) translateX(-20px);
 }
 
-form{
+.modal {
     padding: 50px;
     width: 100%;
     height: 80vh;
@@ -42,38 +48,63 @@ form{
     overflow: hidden;
     overflow-y: scroll;
     scrollbar-width: none;
-}
-h2{
-    color: var(--thirdColor);
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
+    transition: transform 0.5s ease;
 }
 
-input, select{
+h2 {
+    color: var(--thirdColor);
+    margin-bottom: 20px;
+}
+
+input,
+select {
     width: 100%;
     border: none;
     border-bottom: 1px solid var(--thirdColor);
     text-align: center;
     font-size: 16px;
 }
-input:focus, select:focus{
+
+input:focus,
+select:focus {
     outline: none;
     border-bottom: 2px solid var(--thirdColor);
 }
-input{
+
+input {
     height: 30px;
     padding: 5px;
 }
 
-select{
+input::placeholder {
+    color: var(--grayColor);
+}
+
+select {
     height: 35px;
     background-color: var(--secondTextColor);
     font-size: 16px;
     cursor: pointer;
-    color: gray;
+    color: var(--grayColor);
 }
 
-.submit{
+span {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+label {
+    color: var(--grayColor);
+    width: 50%;
+    text-align: left;
+    margin-bottom: -15px;
+}
+
+.submit {
     background-color: var(--thirdColor);
     color: var(--secondTextColor);
     font-weight: bold;
@@ -82,7 +113,8 @@ select{
     width: 50%;
     height: 40px;
 }
-.closeButton{
+
+.closeButton {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -95,4 +127,3 @@ select{
     font-weight: bold;
     cursor: pointer;
 }
-

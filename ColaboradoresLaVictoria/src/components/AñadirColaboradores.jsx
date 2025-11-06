@@ -23,14 +23,14 @@ const AñadirColaboradores = ({ isOpen, onClose }) => {
 
 
   return (
-      <div className={`colaboradoresContainer ${isOpen ? "visible" : ""}` }>
-        <div ref={modalRef} className={`modal ${isOpen ? "active" :""}`}>
+      <div>
+        <div className={`colaboradoresContainer ${isOpen ? "visible" : ""}` }>
           
-        <form method="POST" action="#">
+        <form method="POST" action="#" ref={modalRef} className={`modal ${isOpen ? "active" :""}`}>
 
           <h2>Registro de Empleado</h2>
 
-          <button className="closeButton">X</button>
+      <button className="closeButton">X</button>
 
           <select name="tipoDeDocumento" required>
             <option value="">Tipo de Documento</option>
@@ -54,7 +54,11 @@ const AñadirColaboradores = ({ isOpen, onClose }) => {
             <option value="prestacionServicios">Prestación de Servicios</option>
           </select>
 
-          <input type="date" name="inicioContrato" placeholder="Inicio del Contrato" />
+          <span>
+            <label htmlFor="">Inicio del Contrato:</label>
+            <input type="date" name="inicioContrato" placeholder="Inicio del Contrato" />
+          </span>
+
           <select name="duracionContrato">
             <option value="">Duración del Contrato</option>
             <option value="6">6 Meses</option>
@@ -74,8 +78,11 @@ const AñadirColaboradores = ({ isOpen, onClose }) => {
           <input type="text" name="municipio" placeholder="Municipio" />
           <input type="text" name="estrato" placeholder="Estrato" />
           <input type="text" name="telefono" placeholder="Número de Teléfono" />
-          <input type="date" name="fechaNacimiento" placeholder="Fecha de Nacimiento" />
 
+          <span>
+            <label htmlFor="">Fecha de Nacimiento:</label>
+            <input type="date" name="fechaNacimiento" placeholder="Fecha de Nacimiento" />
+          </span>
           <select name="sexo">
             <option value="">Sexo</option>
             <option value="masculino">Masculino</option>
