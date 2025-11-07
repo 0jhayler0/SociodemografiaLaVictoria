@@ -1,0 +1,43 @@
+
+.ingresarAprendiz {
+    position: absolute;
+    top: calc(8% + 20px);
+    right: 20px;
+    padding: 15px 15px 15px 15px;
+    border: 2px solid var(--thirdColor);
+    border-radius: 10px;
+    background-color: var(--thirdColor);
+    color: var(--secondTextColor);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.ingresarAprendiz:hover {
+    background-color: transparent;
+    color: var(--thirdColor);
+}
+
+.formContainer{
+    z-index: 1000;
+    display: flex;
+    width: 600px;
+    height: max-content;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    border: 3px solid var(--thirdColor);
+    border-radius: 20px;
+    padding: 20px;
+    position: absolute;
+    top: calc(8% + 10px);
+    left: 100%;
+    background-color: var(--secondTextColor);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    transition: all 1s ease;
+}
+
+.formContainer.active {
+    left: calc(100% - 620px);
+}

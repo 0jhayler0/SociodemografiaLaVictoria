@@ -5,6 +5,8 @@ import Incapacidades from './components/Incapacidades'
 import Retirados from './components/Retirados'
 import AñadirColaboradores from './components/AñadirColaboradores'
 import './styles/App.css'
+import FloresDelaVictoria from './assets/FloresDeLaVictoria.png'
+
 
 function App() {
 
@@ -14,11 +16,11 @@ function App() {
   const greeting = () => {
     const T = new Date().getHours();
       if( T >= 5 && T < 12){
-        return "¡Buenos Dias!"
+        return "¡Buenos días!"
       }else if( T >= 12 && T < 18){
-        return "¡Buenas Tardes!"
+        return "¡Buenas tardes!"
       }else{
-        return "¡Buenas Noches!"
+        return "¡Buenas noches!"
       }
   }
 
@@ -33,7 +35,10 @@ function App() {
       case "Retirados":
         return <Retirados/>;
       default:
-        return <div className="greeting">{greeting()}</div>
+        return <div className="greeting">
+                  <img src={FloresDelaVictoria} alt="Logo empresarial" width={600} />
+                  {greeting()}
+                </div>
     }
   }
   
