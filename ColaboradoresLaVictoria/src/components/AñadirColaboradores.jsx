@@ -128,7 +128,7 @@ const AñadirColaboradores = ({ isOpen, onClose }) => {
           <input type="text" name="contactoEmergencia" placeholder="Contacto de Emergencia (Nombre)" />
           <input type="text" name="telEmergencia" placeholder="Teléfono de Emergencia" />
 
-          <input class="submit" type="submit" value="Registrar Empleado" />
+          <input className="submit" type="submit" value="Registrar Empleado" />
         </form>
         </div>
       </div>

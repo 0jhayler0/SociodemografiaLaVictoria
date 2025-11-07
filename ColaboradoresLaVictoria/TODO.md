@@ -1,0 +1,6 @@
+- [x] Update Incapacidades.jsx to add React hooks (useState, useRef, useEffect) and toggle logic for formContainer, similar to Aprendices.jsx
+- [x] Add onClick handler to incapacitarColaborador button to toggle the form
+- [x] Add close button inside the form in formContainer
+- [x] Update Incapacidades.css to include .formContainer and .formContainer.active styles from Aprendices.css
+- [x] Adjust form content in Incapacidades.jsx to be relevant for incapacidades (e.g., fields for collaborator details and incapacity reason)
+- [x] Test the toggle functionality by running the app and verifying the form slides in/out and closes properly
