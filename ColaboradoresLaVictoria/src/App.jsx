@@ -4,14 +4,16 @@ import Aprendices from './components/Aprendices'
 import Incapacidades from './components/Incapacidades'
 import Retirados from './components/Retirados'
 import AñadirColaboradores from './components/AñadirColaboradores'
-import './styles/App.css'
+import Notificaciones from './components/Notificaciones'
 import FloresDelaVictoria from './assets/FloresDeLaVictoria.png'
-
+import esponjaBackground from './assets/esponjaBackground.jpg'
+import './styles/App.css'
 
 function App() {
 
   const [option, setOption] = useState("");
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const [mostrarNotificaciones, setMostrarNotificaciones] = useState(false);
 
   const greeting = () => {
     const T = new Date().getHours();
@@ -36,7 +38,7 @@ function App() {
         return <Retirados/>;
       default:
         return <div className="greeting">
-                  <img src={FloresDelaVictoria} alt="Logo empresarial" width={600} />
+                  <img src={FloresDelaVictoria} alt="Logo empresarial" width={600} style={{ opacity: 0.2 }}/>
                   {greeting()}
                 </div>
     }
@@ -46,6 +48,7 @@ function App() {
   return (
     <div className='principalContainer'>
       <header className='menuContainer'>
+        <button className={`notificacionesBtn ${mostrarNotificaciones ? "active" : ""}`} onClick={() => setMostrarNotificaciones(true)}></button>
         <ul>
           <li><button className={`menuButtons ${option === "Activos" ? "active" : ""}`} onClick={() => setOption("Activos")}>Colaboradores</button></li>
           <li>|</li>
@@ -58,7 +61,8 @@ function App() {
           <li><button className={`menuButtons ${mostrarFormulario ? "active" : ""}`} id="mostrarFormularioBtn" onClick={() => setMostrarFormulario(true)}>Añadir Colaboradores</button></li>
         </ul>
       </header>
-      <AñadirColaboradores isOpen={mostrarFormulario} onClose={() =>setMostrarFormulario(false) }/>
+      <AñadirColaboradores isOpen={mostrarFormulario} onClose={() => setMostrarFormulario(false) } />
+      <Notificaciones isOpen={mostrarNotificaciones} onClose={ () => setMostrarNotificaciones(false)} />
       <main className='content'>{renderContent()}</main>
     </div>
   )

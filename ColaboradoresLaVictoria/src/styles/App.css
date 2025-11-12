@@ -67,9 +67,29 @@
     padding: 13px 15px 13px 15px;
 }
 
+.notificacionesBtn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: transparent;
+    text-align: center;
+    border: 2px solid var(--backgroundColor);
+    border-radius: 50%;
+    padding: 10px;
+    color: var(--secondTextColor);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.notificacionesBtn:hover {
+    background-color: var(--backgroundColor);
+    content: '->';
+}
+
 .content{
     height: 92%;
     z-index: 1;
+    overflow: hidden;
 }
 
 .greeting{
