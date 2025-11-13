@@ -1,0 +1,172 @@
+
+.loginContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/sunFlowerBackground.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loginForm{
+    width: min-content;
+    height: max-content;
+    text-align: center;
+    background-color: var(--secondTextColor);
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    gap: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 10px black;
+}
+
+.loginForm h1{
+    color: var(--thirdColor);
+    text-shadow: 0px 10px 10px var(--grayColor);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.inputError{
+    border-bottom: 2px solid #e74c3c !important;
+    box-shadow: 0 4px 10px rgba(231,76,60,0.12);
+}
+
+.errorMessage{
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: -6px;
+    margin-bottom: 6px;
+    opacity: 0.95;
+}
+
+/* Fade out the login card when navigating to app */
+.fade-out{
+    animation: loginFadeOut 400ms ease forwards;
+}
+
+@keyframes loginFadeOut{
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-10px) scale(0.995); }
+}
+
+/* Container used to show App with a subtle fade-in */
+.appContainer{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.fade-in{
+    animation: appFadeIn 420ms ease forwards;
+}
+
+@keyframes appFadeIn{
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablets y pantallas medianas (768px - 1024px) */
+@media (max-width: 1024px) {
+    .loginForm {
+        padding: 60px 50px;
+        gap: 30px;
+    }
+
+    .loginForm h1 {
+        font-size: 24px;
+    }
+
+    .form input {
+        font-size: 14px;
+    }
+}
+
+/* Tablets pequeñas y grandes teléfonos (480px - 768px) */
+@media (max-width: 768px) {
+    .loginForm {
+        width: 90%;
+        max-width: 400px;
+        padding: 50px 30px;
+        gap: 25px;
+    }
+
+    .loginForm img {
+        max-width: 80px;
+    }
+
+    .loginForm h1 {
+        font-size: 20px;
+    }
+
+    .form {
+        gap: 15px;
+    }
+
+    .form input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .errorMessage {
+        font-size: 0.85rem;
+    }
+}
+
+/* Teléfonos pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .loginForm {
+        width: 95%;
+        max-width: 100%;
+        padding: 40px 20px;
+        gap: 20px;
+        border-radius: 10px;
+    }
+
+    .loginForm img {
+        max-width: 60px;
+    }
+
+    .loginForm h1 {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .form {
+        gap: 12px;
+        width: 100%;
+    }
+
+    .form input {
+        width: 100%;
+        padding: 8px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+
+    .form input[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .errorMessage {
+        font-size: 0.8rem;
+        margin-top: -4px;
+        margin-bottom: 4px;
+    }
+}

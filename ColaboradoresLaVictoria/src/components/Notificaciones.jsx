@@ -25,11 +25,9 @@ const Notificaciones = ({ isOpen, onClose }) => {
     <div>
       <div className={`notificacionesContainer ${ isOpen ? "visible" : ""}`}>
 
-        <button className="closeNotificaciones" onClick={onClose}> <span class="material-symbols-outlined">arrow_back</span></button>
+        <button className="closeNotificaciones" onClick={onClose}><span className="material-symbols-outlined">arrow_back</span></button>
         
-
         <div ref={modalRef} className={`modal ${isOpen ? "active" :""}`}></div>
-
 
       </div>
     </div>

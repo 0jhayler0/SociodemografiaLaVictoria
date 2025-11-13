@@ -40,3 +40,57 @@ position: absolute;
 .formContainer.active {
     left: calc(100% - 620px);
 }
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 1024px) {
+    .formContainer {
+        width: 500px;
+    }
+
+    .formContainer.active {
+        left: calc(100% - 520px);
+    }
+}
+
+@media (max-width: 768px) {
+    .incapacitarColaborador {
+        top: calc(7% + 10px);
+        right: 10px;
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .formContainer {
+        width: 90%;
+        max-width: 100%;
+        top: calc(7% + 5px);
+        left: 100%;
+        padding: 15px;
+    }
+
+    .formContainer.active {
+        left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .incapacitarColaborador {
+        top: calc(7% + 8px);
+        right: 8px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .formContainer {
+        width: 100%;
+        top: 7%;
+        left: 0;
+        right: 0;
+        border-radius: 15px;
+    }
+
+    .formContainer.active {
+        left: 0;
+    }
+}

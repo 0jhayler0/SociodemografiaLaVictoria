@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family:'Elms Sans', sans-serif;
 }
+html, body{
+    width: 100%;
+    height: 100vh;
+}
 
 :root{
     --textColor: black;
@@ -27,7 +31,7 @@
     background-color: var(--thirdColor);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 2;
-
+    position: relative;
 }
 .menuContainer ul{
     list-style: none;
@@ -42,6 +46,53 @@
     font-family: var(--textFont);
     font-size: 20px;
     cursor: pointer;
+}
+
+/* Hamburger Menu Button */
+.hamburgerBtn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.hamburgerBtn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondTextColor);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburgerBtn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburgerBtn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerBtn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.menuList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
+    list-style: none;
 }
 .menuButtons{
     display: flex;
@@ -69,21 +120,23 @@
 
 .notificacionesBtn {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
     background-color: transparent;
-    text-align: center;
     border: 2px solid var(--backgroundColor);
     border-radius: 50%;
-    padding: 10px;
     color: var(--secondTextColor);
     cursor: pointer;
     transition: all 0.5s ease;
+    z-index: 1000;
 }
 
 .notificacionesBtn:hover {
     background-color: var(--backgroundColor);
-    content: '->';
+    color: var(--thirdColor);
 }
 
 .content{
@@ -103,4 +156,202 @@
     font-size: 50px;
     color: var(--thirdColor);
     font-weight: bold;
+    background-image: url(../assets/flowerBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablets y pantallas medianas (768px - 1024px) */
+@media (max-width: 1024px) {
+    .menuContainer ul {
+        gap: 20px;
+    }
+
+    .menuButtons {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .contentContainer {
+        padding: 15px;
+    }
+}
+
+/* Tablets pequeñas y grandes teléfonos (480px - 768px) */
+@media (max-width: 768px) {
+    .hamburgerBtn {
+        display: flex;
+    }
+
+    .menuContainer ul {
+        display: none !important;
+    }
+
+    .menuList {
+        position: fixed !important;
+        top: 8% !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background-color: var(--thirdColor) !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        overflow: hidden !important;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+        z-index: 999 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: none !important;
+    }
+
+    .menuList.open {
+        display: flex !important;
+        max-height: 500px !important;
+    }
+
+    .menuList li {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding: 0 !important;
+        list-style: none !important;
+        margin: 0 !important;
+    }
+
+    .menuList li:nth-child(even) {
+        display: none !important;
+    }
+
+    .menuList li:last-child {
+        border-bottom: none !important;
+    }
+
+    .menuList li button {
+        width: 100% !important;
+        border-radius: 0 !important;
+        padding: 15px 20px !important;
+        justify-content: flex-start !important;
+        border-bottom: none !important;
+        height: auto !important;
+        display: block !important;
+        font-size: 15px !important;
+        gap: 0 !important;
+        background-color: transparent !important;
+        color: var(--secondTextColor) !important;
+    }
+
+    .menuList li button:hover {
+        background-color: var(--hoverColor) !important;
+    }
+
+    .menuList li button.active {
+        background-color: var(--hoverColor) !important;
+        border: none !important;
+    }
+
+    .greeting {
+        gap: 50px;
+        font-size: 32px;
+    }
+
+    .greeting img {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .contentContainer {
+        padding: 10px;
+    }
+
+    .headerContainer {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px auto;
+    }
+
+    .colaboratorsSeacher {
+        flex-direction: column;
+    }
+
+    .colaboratorsSeacher input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .colaboratorsSeacher button {
+        width: 100%;
+    }
+
+    .notificacionesBtn {
+        top: 12px;
+        left: 12px;
+    }
+}
+
+/* Teléfonos pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .notificacionesBtn {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        top: 8px;
+        left: 8px;
+        font-size: 18px;
+    }
+
+    .hamburgerBtn {
+        right: 12px;
+        width: 28px;
+        height: 22px;
+    }
+
+    .hamburgerBtn span {
+        height: 2.5px;
+    }
+
+    .menuContainer {
+        height: 7%;
+    }
+
+    .content {
+        height: 93%;
+    }
+
+    .menuList {
+        top: 7%;
+    }
+
+    .greeting {
+        gap: 20px;
+        font-size: 24px;
+    }
+
+    .greeting img {
+        max-width: 200px;
+    }
+
+    .menuList li button {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    .headerContainer {
+        width: 100%;
+        margin: 8px auto;
+    }
+
+    .contentContainer table {
+        min-width: 100%;
+    }
+
+    .contentContainer th,
+    .contentContainer td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
 }

@@ -6,7 +6,7 @@ const Activos = () => {
     <div>
       <div className='headerContainer'>
         <form className='colaboratorsSeacher' action="">
-          <input type="text" placeholder='Buscar Por cédula'/>
+          <input type="text" placeholder='Buscar por cédula'/>
           <button>Buscar</button>
         </form>
       </div>
@@ -14,8 +14,8 @@ const Activos = () => {
           <table>
             <thead>
               <tr>
-                <th>@</th>
-                <th>@</th>
+                <th></th>
+                <th></th>
                 <th>N° CEDULA</th>
                 <th>NOMBRES Y APELLIDOS</th>
                 <th>AREA</th>

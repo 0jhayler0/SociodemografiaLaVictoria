@@ -61,13 +61,14 @@ const Aprendices = () => {
             <input type="text" name="institucion" placeholder="Institución" required/>
             <input type="text" name="responsable" placeholder='Responsable del aprendiz' required/>
 
-            {/* 👇 Botón para cerrar */}
             <button
               type="button"
               className="closeButton"
               onClick={() => setMostrarFormulario(false)}
             >
-              X
+              <span className="material-symbols-outlined">
+              close
+              </span>
             </button>
           </form>
         </div>

@@ -32,7 +32,7 @@ const Incapacidades = () => {
       <div>
       <div className='headerContainer'>
         <form className='colaboratorsSeacher' action="">
-          <input type="text" placeholder='Buscar Por cédula'/>
+          <input type="text" placeholder='Buscar por cédula'/>
           <button>Buscar</button>
         </form>
 
@@ -60,13 +60,14 @@ const Incapacidades = () => {
           <input type="date" name="fechaFin" placeholder="Fecha de Fin" required />
           <textarea name="motivo" placeholder="Motivo de la Incapacidad" required></textarea>
 
-          {/* 👇 Botón para cerrar */}
           <button
             type="button"
             className="closeButton"
             onClick={() => setMostrarFormulario(false)}
           >
-            X
+            <span className="material-symbols-outlined">
+            close
+            </span>
           </button>
         </form>
       </div>
