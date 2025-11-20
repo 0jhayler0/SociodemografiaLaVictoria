@@ -28,6 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+AUTH_USER_MODEL = "usuariosAdmins.UsuarioAdmin"
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +43,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'apps.colaboradores',
+    'apps.usuariosAdmins'
 ]
 
 MIDDLEWARE = [
@@ -56,8 +61,12 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
     )
 }
+
 
 
 ROOT_URLCONF = 'config.urls'
