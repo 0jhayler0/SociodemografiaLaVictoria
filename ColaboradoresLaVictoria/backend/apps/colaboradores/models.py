@@ -85,13 +85,13 @@ class Colaborador(models.Model):
     fin_lectiva = models.DateField(null=True, blank=True)
     inicio_practica = models.DateField(null=True, blank=True)
     fin_practica = models.DateField(null=True, blank=True)
-    institucion = models.CharField(max_length=30)
-    responsable_aprendiz = models.CharField(max_length=50)
+    institucion = models.CharField(max_length=30, blank=True, null=True)
+    responsable_aprendiz = models.CharField(max_length=50, blank=True, null=True)
 
 
     class Meta:
-        verbose_name_plural = "Usuarios"
-        verbose_name = "Usuario"
+        verbose_name_plural = "Colaboradores"
+        verbose_name = "Colaborador"
 
     def __str__(self):
         return f"{self.nombre, self.cedula}"

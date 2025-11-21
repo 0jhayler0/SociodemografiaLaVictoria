@@ -9,9 +9,9 @@ class UsuarioAdminSerializer(serializers.ModelSerializer):
             "password": {"write_only": True}
         }
 
-        def create(self, validated_data):
-            pwd = validated_data.pop("password")
-            user = UsuarioAdmin(**validated_data)
-            user.set_password(pwd)
-            user.save()
-            return user
+    def create(self, validated_data):
+        pwd = validated_data.pop("password")
+        user = UsuarioAdmin(**validated_data)
+        user.set_password(pwd)
+        user.save()
+        return user

@@ -4,7 +4,7 @@ from .views import ColaboradorViewSet
 
 router = DefaultRouter()
 
-router.register(r"colaboradores", ColaboradorViewSet, basename="colaboradores")
+router.register(r"colaborador", ColaboradorViewSet, basename="colaborador")
 
 urlpatterns = [
     path("", include(router.urls))

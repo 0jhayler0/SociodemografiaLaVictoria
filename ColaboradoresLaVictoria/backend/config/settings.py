@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jxjqq4i$d41ye)ksgta4zu=&el-yd=6!by__3^5xd-$ggwmvox'
+SECRET_KEY = 'django-insecure-zh-32j(x$jt3ofz2sp0lu6+7k$%dewrbe4zw=kc&j=t(1w9q0n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework_simplejwt',
     'corsheaders',
+    'apps.usuariosAdmins',
     'apps.colaboradores',
-    'apps.usuariosAdmins'
 ]
 
 MIDDLEWARE = [
@@ -58,20 +59,17 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173", 
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
 
-
 ROOT_URLCONF = 'config.urls'
-
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173", 
-]
-
 
 TEMPLATES = [
     {
