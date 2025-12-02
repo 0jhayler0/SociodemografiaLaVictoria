@@ -88,6 +88,9 @@ class Colaborador(models.Model):
     institucion = models.CharField(max_length=30, blank=True, null=True)
     responsable_aprendiz = models.CharField(max_length=50, blank=True, null=True)
 
+    # Para colaboradores retirados:
+    retirado = models.BooleanField(default=False)
+
 
     class Meta:
         verbose_name_plural = "Colaboradores"

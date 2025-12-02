@@ -3,4 +3,4 @@ from .models import Colaborador
 
 @admin.register(Colaborador)
 class ColaboradorAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "cedula", "area")
+    list_display = ("nombre", "cedula", "area", "salario_base")
