@@ -1,4 +1,5 @@
 #pylint: disable=no-member
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
@@ -7,10 +8,13 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import get_object_or_404
 from .models import Colaborador
 from .serializers import RegistrarColaboradorSerializer, RetirarColaboradorSerializer
+from .filters import ColaboradorFilter
 
 class ColaboradorViewSet(ModelViewSet):
     queryset = Colaborador.objects.all()
     serializer_class = RegistrarColaboradorSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = ColaboradorFilter
 
     def get_permissions(self):
         if self.action == 'create':
@@ -44,6 +48,3 @@ class RetirarColaboradorView(APIView):
         return Response({
             "message": "colaborador mretirado correctamente"
         }, status=status.HTTP_200_OK)
-
-
-# FILTRAR COLABORADORES POR AREA, CARGO, TIPO_CONTRATO, NACIONALIDAD, EDAD, SEXO, ESTADO CIVIL
