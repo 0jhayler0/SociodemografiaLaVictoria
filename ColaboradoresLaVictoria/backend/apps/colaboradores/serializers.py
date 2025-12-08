@@ -11,7 +11,7 @@ class RegistrarColaboradorSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         area = validated_data.get("area")
         colab = Colaborador(**validated_data)
-        if area != "Aprendices Sena":
+        if area != "Aprendices Sena": # CORREGIR SI EL COLABORADOR ES APRENDIZ, SUS CAMPOS SON OBLIGATORIOS
             colab.inicio_lectiva = None
             colab.fin_lectiva = None
             colab.inicio_practica = None
